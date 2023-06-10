@@ -12,6 +12,24 @@ type Student struct {
 	IsStudent bool
 }
 
+type Orang struct {
+	Nama string
+}
+
+// Interface
+type HasName interface {
+	GetName() string
+}
+
+
+func SayHi(hasName HasName) {
+	fmt.Println("Hi ", hasName.GetName())
+}
+
+func (orang Orang) GetName() string {
+	return orang.Nama
+}
+
 // Struct method
 func (student Student) greet(teacher string) {
 	fmt.Printf("Hello, %v. Your age is %v. This is your teacher, %v \n", student.Name, student.Age, teacher)
@@ -42,5 +60,13 @@ func main() {
 
 	foo.greet(bar.Name)
 	fmt.Println(bar)
+
+	fmt.Println(border)
+
+	seseorang := Orang{
+		Nama : "Budi",
+	}
+
+	SayHi(seseorang)
 
 }
