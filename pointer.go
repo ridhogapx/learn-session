@@ -15,6 +15,7 @@ func main() {
 		Country: "Indonesia",
 	}
 
+	// Pointer is the most effective for allocating memory 
 	var address2 *Address= &address1
 	var address3 *Address = &address1
 
