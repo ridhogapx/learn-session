@@ -16,6 +16,10 @@ type Orang struct {
 	Nama string
 }
 
+type Hewan struct {
+	Nama string
+}
+
 // Interface
 type HasName interface {
 	GetName() string
@@ -34,6 +38,10 @@ func (orang Orang) GetName() string {
 func (student Student) greet(teacher string) {
 	fmt.Printf("Hello, %v. Your age is %v. This is your teacher, %v \n", student.Name, student.Age, teacher)
 } 
+
+func (animal Hewan) GetName() string {
+	return animal.Nama
+}
 
 func main() {
 	var border string = "---------------------------------------------------"
@@ -68,5 +76,11 @@ func main() {
 	}
 
 	SayHi(seseorang)
+
+	neko := Hewan{
+		Nama : "Kucing",
+	}
+
+	SayHi(neko)
 
 }
