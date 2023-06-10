@@ -12,8 +12,13 @@ type Student struct {
 	IsStudent bool
 }
 
+// Struct method
+func (student Student) greet(teacher string) {
+	fmt.Printf("Hello, %v. Your age is %v. This is your teacher, %v \n", student.Name, student.Age, teacher)
+} 
+
 func main() {
-	var border string = "--------------------------"
+	var border string = "---------------------------------------------------"
 
 	result := helper.Sum(15,20)
 	fmt.Println(result)
@@ -35,6 +40,7 @@ func main() {
 		IsStudent: false,
 	}
 
+	foo.greet(bar.Name)
 	fmt.Println(bar)
 
 }
